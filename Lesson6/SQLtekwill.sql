@@ -1,0 +1,135 @@
+SELECT student_id, first_name, student_reg_year AS Admission
+FROM AD_STUDENT_DETAILS;
+
+SELECT student_id
+      ,first_name
+      ,student_reg_year
+      ,student_reg_year+2 "COURSE EXPIRY"
+FROM ad_student_details;
+
+DESCRIBE AD_COURSE_DETAILS;
+
+SELECT *
+FROM AD_COURSE_DETAILS;
+
+SELECT student_ID, first_name, parent_ID, student_reg_year AS Registration
+FROM AD_STUDENT_DETAILS;
+
+SELECT DISTINCT name
+FROM AD_EXAM_DETAILS;
+
+DESCRIBE AD_STUDENT_DETAILS;
+
+DESCRIBE Employees;
+
+SELECT first_name || last_name AS "Nume Prenume"
+FROM Employees;
+
+SELECT STUDENT_ID AS Student#, FIRST_NAME AS Student, PARENT_ID AS "Parent information",STUDENT_REG_YEAR AS "Registered on"
+FROM AD_STUDENT_DETAILS;
+
+SELECT 'Test1 ' || q'[It's a test]'
+FROM dual;
+
+SELECT employee_id,salary,salary*12
+FROM employees;
+
+SELECT first_name || q'['s last name is: ]' || last_name
+FROM employees;
+
+SELECT DISTINCT exam_id
+FROM AD_EXAM_DETAILS;
+
+SELECT employee_id
+    ,last_name
+    ,job_id
+    ,department_id
+FROM employees
+WHERE department_id=90;
+
+SELECT *
+FROM employees
+WHERE last_name='King';
+
+SELECT *
+FROM employees
+WHERE hire_date='07-FEB-15';
+
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY <> 9000; --<> <=> != :not equal
+
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY BETWEEN 2500 AND 3500;
+
+SELECT *
+FROM EMPLOYEES
+WHERE HIRE_DATE BETWEEN '17-OCT-11' AND '09-JUL-14';
+
+SELECT *
+FROM EMPLOYEES
+WHERE MANAGER_ID IN (100, 101, 201);
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME IN ('Kochhar', 'Mourgos', 'Whalen');
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME LIKE 'A%';
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME LIKE 'M%';
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME LIKE '%s';
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME LIKE '__e%';
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME LIKE '%e%';
+
+SELECT *
+FROM EMPLOYEES
+WHERE LAST_NAME LIKE '%r';
+
+SELECT *
+FROM EMPLOYEES
+WHERE JOB_ID LIKE '%CLERK';
+
+SELECT *
+FROM EMPLOYEES
+WHERE JOB_ID LIKE 'ST%';
+
+SELECT *
+FROM EMPLOYEES
+WHERE JOB_ID LIKE '___%';
+
+SELECT *
+FROM EMPLOYEES
+WHERE MANAGER_ID IS NOT NULL;
+
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY>=10000
+AND JOB_ID LIKE '%MAN%'
+AND COMMISSION_PCT IS NOT NULL;
+
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY>=10000
+OR JOB_ID LIKE '%MAN%';
+
+
+
+
+
+
+
+
