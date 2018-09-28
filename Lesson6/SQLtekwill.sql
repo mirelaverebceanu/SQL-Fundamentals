@@ -126,6 +126,69 @@ FROM EMPLOYEES
 WHERE SALARY>=10000
 OR JOB_ID LIKE '%MAN%';
 
+SELECT FIRST_NAME || LAST_NAME
+       ,DEPARTMENT_ID
+       ,PHONE_NUMBER
+       ,SALARY
+FROM EMPLOYEES
+--JOIN DEPARTMENTS
+--JOIN LOCATIONS
+--JOIN JOBS
+WHERE PHONE_NUMBER LIKE '%4'
+AND DEPARTMENT_ID=50
+AND JOB_ID='ST_CLERK';
+--AND CITY = 'South San Francisco'
+--AND JOB_TITLE = 'ST_CLERK';
+
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY BETWEEN 400 AND 10000
+AND JOB_ID LIKE 'IT%';
+
+SELECT last_name
+       ,department_id
+       ,salary
+FROM EMPLOYEES
+WHERE (department_id=60
+or department_id=80)
+and salary>10000;
+
+select *
+from EMPLOYEES
+Where (JOB_ID='SA_REP'
+or JOB_ID='SA_MAN')
+and phone_number like '0%';
+
+select *
+from EMPLOYEES
+Where (JOB_ID='SA_REP'
+or JOB_ID='SA_MAN')
+and phone_number like '0%'
+ORDER BY SALARY ASC;
+
+select first_name || ' ' || last_name AS fullname
+from EMPLOYEES
+order by fullname desc;
+
+select first_name || ' ' || last_name AS fullname
+       , salary as salariu
+from EMPLOYEES
+order by 1,2;
+
+select *
+from employees
+order by employee_id
+fetch first 10 rows only;
+
+select *
+from employees
+order by employee_id
+offset 5 rows
+fetch next 10 rows only;
+
+SELECT *
+FROM EMPLOYEES
+WHERE EMPLOYEE_ID = &EMPLOYEE;
 
 
 
