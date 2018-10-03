@@ -190,6 +190,57 @@ SELECT *
 FROM EMPLOYEES
 WHERE EMPLOYEE_ID = &EMPLOYEE;
 
+SELECT *
+FROM EMPLOYEES
+WHERE FIRST_NAME = '&name';
+
+SELECT *
+FROM EMPLOYEES
+WHERE HIRE_DATE = '&date';
+
+SELECT first_name 
+       ,last_name
+       ,&hide_column
+FROM EMPLOYEES
+WHERE HIRE_DATE = '&date'
+ORDER BY &hide_order_column;
+
+Select employee_id, last_name, first_name, salary, &&hide_column1, &&hide_column2
+From employees
+Order by &hide_column1 desc, &hide_column2 asc;
+
+undefine hide_column1;
+undefine hide_column2;
+
+set verify on
+Select employee_id, last_name, first_name, salary, '&&hide_column'
+From employees
+Where hire_date='&hide_column';
+
+Select first_name, last_name
+--, lower(first_name) as lower, upper(last_name) as upper, initcap(last_name) as initcap
+from employees
+where upper(last_name) like'%A%';
+
+Select first_name || ' ' || last_name as full_name_1
+       ,concat(first_name,last_name) as full_name_2
+       ,substr(first_name,1,3) as substr_1
+       ,substr(last_name,6,3) as substr_2
+       ,substr(first_name,-3,3) as substr_3
+       ,substr('hello word', 1, 4) as substr_4
+       ,length(first_name) as length_1
+       ,instr(lower(first_name), 'e',1,2) as instr_1
+       ,instr('MD-2002,or Chisinau, str Kiev, ap.1',',',1,1) as instr_2
+from employees;
+
+define test_string='MD-2002,or Chisinau, str Kiev, ap.1';
+Select substr ('MD-2002,or Chisinau, str Kiev, ap.1',1,
+       instr('MD-2002,or Chisinau, str Kiev, ap.1',',',1,1)-1)
+from dual;
+ 
+
+
+
 
 
 
